@@ -25,7 +25,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     static CropImageView imageView;
-    Button selectBtn, cameraBtn;
+    Button selectBtn;
     final int SELECT_CODE = 100;
     Mat mat;
 
@@ -44,18 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(i, SELECT_CODE);
             }
         });
-        cameraBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 
     public void init() {
         imageView = findViewById(R.id.imageView);
         selectBtn = findViewById(R.id.selectButton);
-        cameraBtn = findViewById(R.id.cameraButton);
 
         if (OpenCVLoader.initLocal()) Log.d("Loaded", "Success");
         else Log.d("Loaded", "Error ");
